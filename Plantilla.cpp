@@ -10,6 +10,7 @@
 #define dEdge(u, v) g[u].pb(v)
 #define dwEdge(u, v, w) g[u].pb({v, w})
 #define BOOST ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+#define minHeap int, vector<int>, greater<int>
 
 using namespace std;
 typedef long long int lli;
