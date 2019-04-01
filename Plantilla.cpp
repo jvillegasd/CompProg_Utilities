@@ -17,6 +17,12 @@ typedef long long int lli;
 typedef pair<int, int> pii;
 vector<int> g[0];
 
+lli gcd(lli a, lli b){
+    if(b == 0) return a;
+    a%=b;
+    return gcd(b, a);
+}
+
 int main(){
     
     return 0;
