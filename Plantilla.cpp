@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #define pb push_back
+#define pf push_front
 #define pob pop_back
 #define fp first
 #define sp second
