@@ -24,7 +24,11 @@ lli gcd(lli a, lli b){
     return gcd(b, a);
 }
 
+lli lcm(lli a, lli b){
+    return (a*b)/gcd(a, b);
+}
+
 int main(){
-    
+
     return 0;
 }
