@@ -28,7 +28,18 @@ lli lcm(lli a, lli b){
     return (a*b)/gcd(a, b);
 }
 
-int main(){
+int binsearch(int n, lli arr[], lli sum){
+    int l = 0, r = n-1, mid;
+    while(l<=r){
+        mid = (l+r)/2;
+        if(arr[mid]==sum) return mid;
+        if(arr[mid]<sum) l = mid+1;
+        else r = mid-1;
+    }
+    return -1;
+}
 
+int main(){
+   
     return 0;
 }
