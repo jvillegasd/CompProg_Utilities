@@ -1,9 +1,9 @@
 //Modificado de http://www.inf.fh-flensburg.de/lang/algorithmen/sortieren/merge/mergen.htm
 void merge(int a[], int l, int m, int r){
-    int i = l, j = m+1, bsize = 0, cnt = 0, b[1000100];
+    int i = l, j = m+1, bsize = 0, b[1000100];
     while(i<=m && j<=r){
         if(a[i]<=a[j]) b[bsize++]=a[i++];
-        else b[bsize++]=a[j++], cnt++;
+        else b[bsize++]=a[j++];
     }
     while(i<=m) b[bsize++]=a[i++];
     while(j<=r) b[bsize++]=a[j++];
