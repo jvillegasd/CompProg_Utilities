@@ -18,7 +18,7 @@ void DFS2(int u){
     for(auto v : invG[u]) if(!vist[v]) DFS2(v);
 }
 
-void SCC(int node){
+void SCC(){
     memset(vist, false, sizeof(vist));
     for(int u = 1; u <= n; u++) if(!vist[u]) DFS1(u); //Realizar DFS con el grafo para obtener nodos con el mayor tiempo de llegada
     memset(vist, false, sizeof(vist));
@@ -33,6 +33,6 @@ void SCC(int node){
 }
 
 int main(){
-    SCC(node);
+    SCC();
     return 0;
 }
