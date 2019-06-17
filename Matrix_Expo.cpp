@@ -1,3 +1,5 @@
+//http://fusharblog.com/solving-linear-recurrence-for-programming-contest/ Me guié de aqui para codificar
+//https://comeoncodeon.wordpress.com/2011/05/08/recurrence-relation-and-matrix-exponentiation/ De aquí baso mi implementacion
 #include <bits/stdc++.h>
 #define MOD 1000000009
 
