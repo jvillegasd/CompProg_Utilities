@@ -1,5 +1,6 @@
 //http://fusharblog.com/solving-linear-recurrence-for-programming-contest/ Me guié de aqui para codificar
 //https://comeoncodeon.wordpress.com/2011/05/08/recurrence-relation-and-matrix-exponentiation/ De aquí baso mi implementacion
+//https://discuss.codechef.com/t/rng-editorial/10068 De aquí baso mi implementacion
 #include <bits/stdc++.h>
 #define MOD 1000000009
 
@@ -67,10 +68,10 @@ int main(){
             if(i==0) trans.m[i][j] = i-esimo coeficiente; //Funcion unica de recurrencia
 	    if(i==j+1) trans.m[i][j] = 1;
         }
-    }//La respuesta por lo general esta en la columna k-2, si se inicializata "trans.m" al revez, estaria en la columna 1
-    trans = mPow(trans, n-1);
+    }//La respuesta por lo general esta en la columna 0, si se inicializata "trans.m" al revez, estaria en la columna 1
+    trans = mPow(trans, n-k+1);
     sum = 0;
-    for(int i = 0; i < k; i++) sum+=(trans.m[k-2][i]*bc[k-i-1])%MOD, sum%=MOD; //Multiplicar primer coeficiente con el ultimo caso base de su respectiva funcion y asi
+    for(int i = 0; i < k; i++) sum+=(trans.m[0][i]*bc[k-i-1])%MOD, sum%=MOD; //Multiplicar primer coeficiente con el ultimo caso base de su respectiva funcion y asi
     printf("%lld\n", sum);
     return 0;
 }
