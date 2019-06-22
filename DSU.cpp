@@ -1,3 +1,4 @@
+//https://cp-algorithms.com/data_structures/disjoint_set_union.html
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -22,6 +23,14 @@ bool unionSet(int i, int j){
     int iRoot = find(i), jRoot = find(j);
     if(iRoot == jRoot) return false; 
     parent[iRoot] = jRoot;
+    /*
+        Mejora rank
+        if(iRoot != jRoot){
+            if(size[iRoot] < size[jRoot]) swap(iRoot, jRoot);
+            parent[jRoot] = iRoot; //El menor se añade al mayor
+            size[iRoot]+=size[jRoot];
+        }
+    */
     return true;
 }
 int main(){
