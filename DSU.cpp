@@ -24,11 +24,18 @@ bool unionSet(int i, int j){
     if(iRoot == jRoot) return false; 
     parent[iRoot] = jRoot;
     /*
-        Mejora rank
+        Mejora rank (Peso)
         if(iRoot != jRoot){
             if(size[iRoot] < size[jRoot]) swap(iRoot, jRoot);
             parent[jRoot] = iRoot; //El menor se añade al mayor
             size[iRoot]+=size[jRoot];
+        }
+        
+        Mejora rank (Depth)
+        if(iRoot != jRoot){
+            if(depth[iRoot] < depth[jRoot]) swap(iRoot, jRoot);
+            parent[jRoot] = iRoot; //El menor se añade al mayor
+            if(depth[iRoot] == depth[jRoot]) depth[jRoot]++;
         }
     */
     return true;
