@@ -21,11 +21,11 @@ void buildTree(int node, int l, int r){
     tree[node] = tree[2*node] + tree[2*node + 1];
 }
 
-int getSum(int node, int l, int r, int i, int j){
+int query(int node, int l, int r, int i, int j){
     if(i <= l && r <= j) return tree[node];
     if(r < i || l > j) return 0;
     int mid = (l + r)/2;
-    return getSum(2*node, l, mid, i, j) + getSum(2*node + 1, mid + 1, r, i, j);
+    return query(2*node, l, mid, i, j) + query(2*node + 1, mid + 1, r, i, j);
 }
 
 void updateTree(int node, int l, int r, int i, int value){
@@ -41,7 +41,7 @@ void updateTree(int node, int l, int r, int i, int value){
 
 int main(){
     buildTree(1, 0, n - 1);
-    cout << getSum(1, 0, n - 1, 1, 3) << endl; //Suma de los valores del intervalo [1, 3]
+    cout << query(1, 0, n - 1, 1, 3) << endl; //Suma de los valores del intervalo [1, 3]
     updateTree(1, 0, n - 1, 1, 10); //Remplazar el valor de arr[1] = 10 y actualizar
     cout << getSum(1, 0, n - 1, 1, 3) << endl; //Suma de los valores del intervalo [1, 3] con arr[1] = 10
     return 0;
