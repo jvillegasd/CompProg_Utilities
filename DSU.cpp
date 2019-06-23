@@ -26,9 +26,9 @@ bool unionSet(int i, int j){
     /*
         Mejora rank (Peso)
         if(iRoot != jRoot){
-            if(size[iRoot] < size[jRoot]) swap(iRoot, jRoot);
+            if(sz[iRoot] < sz[jRoot]) swap(iRoot, jRoot);
             parent[jRoot] = iRoot; //El menor se añade al mayor
-            size[iRoot]+=size[jRoot];
+            sz[iRoot]+=sz[jRoot];
         }
         
         Mejora rank (Depth)
