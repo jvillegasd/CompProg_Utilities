@@ -16,11 +16,12 @@
 using namespace std;
 typedef long long int lli;
 typedef pair<int, int> pii;
+lli nl, arr[0];
 vector<int> g[0];
 
 lli gcd(lli a, lli b){if(b == 0) return a;a%=b;return gcd(b, a);}
 lli lcm(lli a, lli b){return (a*b)/gcd(a, b);}
-int bins(lli n,lli arr[],lli sum){int l=0,r=n-1,mid;while(l<=r){mid=(l+r)/2;if(arr[mid]==sum)return mid;if(arr[mid]<sum)l=mid+1;else r=mid-1;}return -1;}
+int bs(lli sum){int l=0,r=nl-1,mid;while(l<=r){mid=(l+r)/2;if(arr[mid]==sum)return mid;if(arr[mid]<sum)l=mid+1;else r=mid-1;}return -1;}
 
 int main(){
    
