@@ -28,7 +28,7 @@ void shift_solution(lli &x, lli &y, lli a, lli b, lli cnt){
 }
 
 /*
-    Calcula todas las soluciones de la ecuacion en un intervalo dado para X como para Y.
+    Calcula el numero de todas las soluciones de la ecuacion en un intervalo dado para X como para Y.
     De aqui obtienes un intervalo donde se encuentran todas las soluciones en X, para hallarlas:
                             x=lx+k*b/g, donde g es el gcd(a, b)
                             para toda k>=0 hasta que x==rx
