@@ -39,17 +39,6 @@ void updateTree(int node, int l, int r, int i, int value){
     tree[node] = tree[2*node] + tree[2*node + 1];
 }
 
-void update2(int node, int l, int r, int i, int value){ //Deberia servir de la misma manera que updateTree
-    if(l == r){
-        tree[node] = value;
-        return;
-    }
-    int mid = (l + r)/2;
-    if(l <= i && i <= mid) update2(2*node, l, mid, i, value);
-    else update2(2*node + 1, mid + 1, r, i, value);
-    tree[node] = tree[2*node] + tree[2*node + 1];
-}
-
 int main(){
     buildTree(1, 0, n - 1);
     cout << query(1, 0, n - 1, 1, 3) << endl; //Suma de los valores del intervalo [1, 3]
