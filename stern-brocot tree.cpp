@@ -28,7 +28,7 @@ int main(){
             if((double)p*qm <= (double)q*pm) p2=pm, q2=qm;
             else p1=pm, q1=qm;
         }
-        //Busqueda los n primeros nodos que tocan a p/q
+        //Busqueda los n primeros nodos que tocan a p/q (al imprimir ans, asegurarse de parar cuando aux == 0)
         set<pair<lli, lli>> ans;
         if((p1 != p || q1 != q) && n) ans.insert({p1, q1}), p1+=p, q1+=q, n--;
         if((p2 != p || q2 != q) && n) ans.insert({p2, q2}), p2+=p, q2+=q, n--;
