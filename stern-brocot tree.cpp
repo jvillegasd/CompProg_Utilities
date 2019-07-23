@@ -3,7 +3,7 @@
     Se usa la mediante para hacerlo y se realiza lo siguiente:
     1) Iniciar con un intervalo (p1/q1, p2/q2) = (0/1, 1/1) y se buscara el nodo p/q
     2) Se calcula la mediante: m=(p1+p2)/(q1+q2)
-    3) Si p/q <= m, el nodo p/q estará a la derecha y el nuevo intervalo es (p1/q1, m); sino, el intervalo es (m, p2/q2)
+    3) Si p/q <= m, el nodo p/q estarÃ¡ a la derecha y el nuevo intervalo es (p1/q1, m); sino, el intervalo es (m, p2/q2)
     4) Te detienes cuando p1/q1, p2/q2 o m sean igual al nodo p/q
     Algo a notar es que las m anteriores a encontrar el nodo son los nodos anteriores en el camino de la raiz 1/1 a p/q,
     tambien lo pueden ser p1/q1 y p2/q2, todo depende de quien rompe el algoritmo. Los primeros nodos que tocan a p/q,
@@ -18,6 +18,7 @@ int main(){
     while(scanf("%lld %lld %lld", &p, &q, &n) == 3){
         p1=0, q1=1, p2=1, q2=1;
         aux=n;
+        //Busqueda del nodo p/q
         while(true){
             if(p1 == p && q1 == q) break;
             if(p2 == p && q2 == q) break;
@@ -27,6 +28,7 @@ int main(){
             if((double)p*qm <= (double)q*pm) p2=pm, q2=qm;
             else p1=pm, q1=qm;
         }
+        //Busqueda los n primeros nodos que tocan a p/q
         set<pair<lli, lli>> ans;
         if((p1 != p || q1 != q) && n) ans.insert({p1, q1}), p1+=p, q1+=q, n--;
         if((p2 != p || q2 != q) && n) ans.insert({p2, q2}), p2+=p, q2+=q, n--;
