@@ -1,5 +1,5 @@
 /*
-    Implementacion de Z function para saber el tamaño de la
+    Implementacion de Z function para saber el tamaÃ±o de la
     maxima subcadena de la string "S" que empieza en la posicion "i" que es
     prefijo de "S", este valor se encuentra en el array "Z" en "Z[i]". Este algoritmo
     tiene diversos usos:
@@ -39,4 +39,16 @@ int no_substrings(string s){
         cnt+=(i+1)-mx;
     }
     return cnt;
+}
+
+int string_compression(string s){
+    vector<int> z=z_function(s);
+    int n=(int)s.length(), ans=0;
+    for(int i = 0; i < z.size(); i++){
+        if(n%i == 0 && i+z[i] == n){
+            ans=i;
+            break;
+        }
+    }
+    return ans;
 }
