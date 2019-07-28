@@ -19,6 +19,7 @@
        *) Hallar la tabla "Z" de "S"
        *) Ir iterando por todas las "i" que dividan a "n" y verificar de que i+z[i]==n, si se cumple, entonces la respuesta es i,
           quiere decir que "T" debe tener un tamaño de i y "T" es un prefijo de "S" de tamaño i
+       PD: Si no se encuentra i, entonces se necesita de toda la string, por lo que se retorna "n"
 */
 
 vector<int> z_function(string s){
@@ -51,11 +52,11 @@ int no_substrings(string s){
 int string_compression(string s){
     vector<int> z=z_function(s);
     int n=(int)s.length(), ans=0;
-    for(int i = 0; i < z.size(); i++){
+    for(int i = 1; i < z.size(); i++){
         if(n%i == 0 && i+z[i] == n){
             ans=i;
             break;
         }
     }
-    return ans;
+    return (ans == 0)?n:ans;
 }
