@@ -1,6 +1,6 @@
 /*
     Implementacion de busqueda de Stern-Brocot tree.
-    Se usa la mediante para hacerlo y se realiza lo siguiente:
+    Se usa la "mediante" para hacerlo y se realiza lo siguiente:
     1) Iniciar con un intervalo (p1/q1, p2/q2) = (0/1, 1/1) y se buscara el nodo p/q
     2) Se calcula la mediante: m=(p1+p2)/(q1+q2)
     3) Si p/q <= m, el nodo p/q estará a la derecha y el nuevo intervalo es (p1/q1, m); sino, el intervalo es (m, p2/q2)
