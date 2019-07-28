@@ -18,7 +18,7 @@
        string "T" del tamaño mas pequeño posible tal que "S" pueda ser representado con la concatenacion de una o mas copias de "T":
        *) Hallar la tabla "Z" de "S"
        *) Ir iterando por todas las "i" que dividan a "n" y verificar de que i+z[i]==n, si se cumple, entonces la respuesta es i,
-          quiere decir que "T" debe tener un tamaño de i y "T" es un prefijo de tamaño i
+          quiere decir que "T" debe tener un tamaño de i y "T" es un prefijo de "S" de tamaño i
 */
 
 vector<int> z_function(string s){
