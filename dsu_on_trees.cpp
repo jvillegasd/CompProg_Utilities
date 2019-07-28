@@ -7,8 +7,8 @@ int k;
 /*
 	Es la implementacion en O(nlog^2(n)) de DSU on trees. Sirve para resolver problemas donde
 	se pregunten ciertas propiedades que debe tener un nodo "u", todo esto para multiples queries.
-	El multiset hace de la estructura del dsu, aqui se iran guardando los representantes de cada conjunto,
-	esto cambia de acuerdo al problema. Una optimizacion lo cual hace que tenga la complejidad antes descrita
+	El multiset hace de la estructura del dsu, aqui se iran guardando los representantes de cada conjunto o
+	sus elementos, esto cambia de acuerdo al problema. Una optimizacion lo cual hace que tenga la complejidad antes descrita
 	es el hecho de usar la mejora del peso del DSU original, para esto, se busca el hijo del subarbol "u" que
 	tenga mas peso y este se le asigna al DSU de "u". Dependiendo de la propiedad que te esten pidiendo, vas
 	a iterar en los demas hijos e iras buscando nodos que cumplan la propiedad especifica y lo iras uniendo
