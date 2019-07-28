@@ -8,7 +8,7 @@
     Algo a notar es que las m anteriores a encontrar el nodo son los nodos anteriores en el camino de la raiz 1/1 a p/q,
     tambien lo pueden ser p1/q1 y p2/q2, todo depende de quien rompe el algoritmo. Los primeros nodos que tocan a p/q,
     son los p1/q1 y/o p2/q2 que sean diferentes a p/q, los demas son sus descendientes.
-    En la implementacion de abajo, se encuentra el nodo p/q y los primeros n nodos que lo tocan
+    En la implementacion de abajo se encuentra el nodo p/q y los primeros n nodos que lo tocan
 
     Implementacion de creacion de Stern-Brocot tree.
     Si tienes un nodo a/b, su hijo izquierdo es: a/(a+b), y su hijo derecho es: (a+b)/b
