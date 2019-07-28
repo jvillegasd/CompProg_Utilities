@@ -12,7 +12,7 @@
        se puedan encontrar en la substring reversa "S"
        PD: No cuenta la string vacia como solucion
     3) Compresion de string:
-       Enunciado: Dada una string "S" de tamaño "n", hallar su representacion "compresa" mas pequeña, es decir: Encuentra una
+       Enunciado: Dada una string "S" de tamaño "n", hallar su representacion "comprimida" mas pequeña, es decir: Encuentra una
        string "T" del tamaño mas pequeño posible tal que "S" pueda ser representado con la concatenacion de una o mas copias de "T":
        *) Hallar la tabla "Z" de "S"
        *) Ir iterando por todas las "i" que dividan a "n" y verificar de que i+z[i]==n, si se cumple, entonces la respuesta es i,
