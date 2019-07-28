@@ -2,7 +2,7 @@
     Implementacion de Z function para saber el tamaño de la maxima subcadena de la string "S" que empieza en la 
     posicion "i" que es prefijo de "S", este valor se encuentra en el array "Z" en "Z[i]". Este algoritmo tiene diversos usos:
     1) Buscar cuantas ocurrencias de un patron "P" suceden en una string "S":
-       *) Se crea una string "T" = "P" + "$" + "S, "$" es un separador para indicarle al algoritmos hasta donde debe comparar
+       *) Se crea una string "T" = "P" + "$" + "S, "$" es un separador para indicarle al algoritmo hasta donde debe comparar
        *) Sea "k" = Z[i+length("P")+1], si "k" = length("P"), entonces se encontro una ocurrencia. Notese que se hace un juego de
           indices para arreglar el desfase que tiene "T"
     2) Contar el numero de diferentes substring de "S":
