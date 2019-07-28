@@ -12,6 +12,7 @@
        Se va resolviendo iterativamente. Para cada substring en reversa de "S" se le calcula la tabla "Z" y se busca el mayor
        valor Z[i], luego, ir sumando length(subtring reversa "S")-max(Z). Lo que se hace es calcular cuantas substrings que solo
        se puedan encontrar en la substring reversa "S"
+       PD: No cuenta la string vacia como solucion
     3) Compresion de string:
        Enunciado: Dada una string "S" de tamaño "n", hallar su representacion "compresa" mas pequeña, es decir: Encuentra una
        string "T" del tamaño mas pequeño posible tal que "S" pueda ser representado con la concatenacion de una o mas copias de "T":
