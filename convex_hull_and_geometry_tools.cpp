@@ -6,7 +6,7 @@ struct pt {
     }
 };
 
-bool onSegment(pt p, pt q, pt r) { //Ver si el punto Q cae en la linea PR
+bool onSegment(pt p, pt q, pt r) { //Ver si el punto Q cae en la linea PR, donde P, R, Q son colineales
     if (q.x <= max(p.x, r.x) && q.x >= min(p.x, r.x) &&
         q.y <= max(p.y, r.y) && q.y >= min(p.y, r.y))
        return true;
@@ -40,7 +40,7 @@ bool has_intersection_point(pt p1, pt q1, pt p2, pt q2){ //Ver si dos lineas se 
     return false;
 }
 
-bool is_inside(pt test, vector<pt> poly){ //Ver si un punto est· contenido dentro de un poligono convexo
+bool is_inside(pt test, vector<pt> poly){ //Ver si un punto est√° contenido dentro de un poligono convexo
     int i;
     int j;
     bool result = false;
@@ -56,9 +56,9 @@ bool is_inside(pt test, vector<pt> poly){ //Ver si un punto est· contenido dentr
 
 /*
     Implementacion para saber si dos poligonos convexos se intersectan entre si.
-    1) La primera parte consiste en verificar si alguna arista del poligono A est· intersectando a otra del poligono B.
+    1) La primera parte consiste en verificar si alguna arista del poligono A est√° intersectando a otra del poligono B.
     2) La segunda parte consiste en que si no se pudo encontrar que el poligono A se intersecta con el poligono B, entonces
-       se buscar· si alg˙n punto del poligino A est· contenido dentro el poligono B y viceversa
+       se buscar√° si alg√∫n punto del poligino A est√° contenido dentro el poligono B y viceversa
 */
 
 bool ch_interset(vector<pt> a, vector<pt> b){
