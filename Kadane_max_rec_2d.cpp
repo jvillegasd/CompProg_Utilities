@@ -31,7 +31,6 @@ int findMaxSum(int M[][]){
     int maxSum = INT_MIN, finalLeft, finalRight, finalTop, finalBottom;
     int left, right, i;
     int sum, start, finish;
-
     for(left = 0; left < COL; ++left){
         int temp[ROW]={0};
         for(right = left; right < COL; ++right){
