@@ -3,7 +3,7 @@ void DFS2(int u, int p){
     tin[u] = cntt++;
     parent[u][0] = p;
     for(int i = 1; i < lg2n; ++i) parent[u][i] = parent[parent[u][i-1]][i-1];
-    for(auto v : tree[u]){
+    for(auto v : g[u]){
         if(v == p) continue;
         DFS2(v, u);
     }
