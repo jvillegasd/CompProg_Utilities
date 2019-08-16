@@ -1,11 +1,5 @@
 //https://cp-algorithms.com/data_structures/disjoint_set_union.html
-#include <bits/stdc++.h>
-
-using namespace std;
-
-int parent[9999999];
-
-void makeSet(int n){
+void make_set(int n){
     for(int i = 0; i < n; i++) parent[i] = i;
 }
 
@@ -19,7 +13,7 @@ int find(int i){
     */
 }
 
-bool unionSet(int i, int j){
+bool union_set(int i, int j){
     int iRoot = find(i), jRoot = find(j);
     if(iRoot == jRoot) return false; 
     parent[iRoot] = jRoot;
@@ -46,9 +40,4 @@ bool unionSet(int i, int j){
         }
     */
     return true;
-}
-int main(){
-    makeSet(n);
-    for(int i = 0; i < n; i++) if(unionSet(a, b)) ans+=w;
-    return 0;
 }
