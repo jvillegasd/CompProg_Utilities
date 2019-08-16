@@ -40,9 +40,9 @@ bool unionSet(int i, int j){
         
         Mejora rank (Permite usar Path Compression)
         if(iRoot != jRoot){
-            if(rank[iRoot] < rank[jRoot]) swap(iRoot, jRoot);
+            if(rankdsu[iRoot] < rankdsu[jRoot]) swap(iRoot, jRoot);
             parent[jRoot] = iRoot;
-            if(rank[iRoot] == rank[jRoot]) rank[iRoot]++;
+            if(rankdsu[iRoot] == rankdsu[jRoot]) rank[iRoot]++;
         }
     */
     return true;
