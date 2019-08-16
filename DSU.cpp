@@ -37,6 +37,13 @@ bool unionSet(int i, int j){
             parent[jRoot] = iRoot; //El menor se añade al mayor
             if(depth[iRoot] == depth[jRoot]) depth[jRoot]++;
         }
+        
+        Mejora rank (Permite usar Path Compression)
+        if(iRoot != jRoot){
+            if(rank[iRoot] < rank[jRoot]) swap(iRoot, jRoot);
+            parent[jRoot] = iRoot;
+            if(rank[iRoot] == rank[jRoot]) rank[iRoot]++;
+        }
     */
     return true;
 }
