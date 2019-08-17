@@ -1,6 +1,6 @@
 //https://cp-algorithms.com/graph/edmonds_karp.html
 vector<vector<int>> capacity;
-vector<vector<int>> adj;
+vector<vector<int>> g;
 
 int bfs(int s, int t, vector<int>& parent) {
     fill(parent.begin(), parent.end(), -1);
@@ -11,7 +11,7 @@ int bfs(int s, int t, vector<int>& parent) {
         int cur = q.front().first;
         int flow = q.front().second;
         q.pop();
-        for (int next : adj[cur]) {
+        for (int next : g[cur]) {
             if (parent[next] == -1 && capacity[cur][next]) {
                 parent[next] = cur;
                 int new_flow = min(flow, capacity[cur][next]);
