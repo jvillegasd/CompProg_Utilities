@@ -1,9 +1,5 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 int graph[n][n], rGraph[n][n], n, parent[n];
-        /*Ford Fulkerson with BFS*/
+
 bool BFS(int s, int t){
     bool visited[n];
     memset(visited, false, sizeof(visited));
@@ -24,7 +20,7 @@ bool BFS(int s, int t){
     }
     return visited[t];
 }
-
+//Dado el grafo, donde n = nodos del grafo, s = source y t = sink
 int fordFulkerson(int s, int t){
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++) rGraph[i][j] = graph[i][j];
@@ -44,10 +40,4 @@ int fordFulkerson(int s, int t){
         max_flow+=path_flow;
     }
     return max_flow;
-}
-
-int main(){
-    //Dado el grafo, donde n = nodos del grafo, s = source y t = sink
-    fordFulkerson(s, t);
-    return 0;
 }
