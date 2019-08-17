@@ -31,7 +31,7 @@ int bfs(int s, int t, vector<int>& parent) {
 
 int maxflow(int s, int t, int n) {
     int flow = 0;
-    vector<int> parent(n);
+    vector<int> parent(n+1);
     int new_flow;
     while (new_flow = bfs(s, t, parent)) {
         flow += new_flow;
