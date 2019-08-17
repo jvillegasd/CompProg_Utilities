@@ -10,7 +10,7 @@ bool BFS(int s, int t){
     while(!q.empty()){
         int u = q.front();
         q.pop();
-        for(int v = 0; v < n; v++){
+        for(int v = 1; v <= n; v++){
             if(!visited[v] && rGraph[u][v] > 0){
                 q.push(v);
                 parent[v] = u;
@@ -22,20 +22,20 @@ bool BFS(int s, int t){
 }
 //Dado el grafo, donde n = nodos del grafo, s = source y t = sink
 int fordFulkerson(int s, int t){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++) rGraph[i][j] = graph[i][j];
+    for(int u = 1; u <= n; u++){
+        for(int v = 1; v <= n; v++) rGraph[u][v] = graph[u][v];
     }
     int max_flow = 0;
     while(BFS(s, t)){
         int path_flow = INT_MAX;
-        for(int i = t; i != s; i = parent[i]){
-            int j = parent[i];
-            path_flow = min(path_flow, rGraph[j][i]);
+        for(int v = t; v != s; v = parent[v]){
+            int u = parent[v];
+            path_flow = min(path_flow, rGraph[v][u]);
         }
-        for(int i = t; i != s; i = parent[i]){
-            int j = parent[i];
-            rGraph[j][i]-=path_flow;
-            rGraph[i][j]+=path_flow;
+        for(int v = t; v != s; v = parent[v]){
+            int u = parent[v];
+            rGraph[u][v]-=path_flow; //Flujo saliente
+            rGraph[v][j]+=path_flow; //Flujo entrante
         }
         max_flow+=path_flow;
     }
