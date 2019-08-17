@@ -39,8 +39,8 @@ int maxflow(int s, int t) {
         int cur = t;
         while (cur != s) {
             int prev = parent[cur];
-            capacity[prev][cur]-=new_flow; //Flujo saliente de prev a cur
-            capacity[cur][prev]+=new_flow;  //Flujo entrante de cur desde prev
+            capacity[prev][cur]-=new_flow; //Flujo entrante de cur
+            capacity[cur][prev]+=new_flow;  //Flujo saliente de cur
             cur = prev;
         }
     }
