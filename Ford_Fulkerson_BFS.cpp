@@ -1,43 +1,42 @@
-int graph[n][n], rGraph[n][n], n, parent[n];
+int n;
+vector<vector<int>> capacity;
+vector<vector<int>> adj;
 
-bool BFS(int s, int t){
-    bool visited[n];
-    memset(visited, false, sizeof(visited));
-    queue<int> q;
-    q.push(s);
-    visited[s] = true;
-    parent[s] = -1;
-    while(!q.empty()){
-        int u = q.front();
+int bfs(int s, int t, vector<int>& parent) {
+    fill(parent.begin(), parent.end(), -1);
+    parent[s] = -2;
+    queue<pair<int, int>> q;
+    q.push({s, INF});
+    while (!q.empty()) {
+        int cur = q.front().first;
+        int flow = q.front().second;
         q.pop();
-        for(int v = 1; v <= n; v++){
-            if(!visited[v] && rGraph[u][v] > 0){
-                q.push(v);
-                parent[v] = u;
-                visited[v] = true;
+        for (int next : adj[cur]) {
+            if (parent[next] == -1 && capacity[cur][next]) {
+                parent[next] = cur;
+                int new_flow = min(flow, capacity[cur][next]);
+                if (next == t)
+                    return new_flow;
+                q.push({next, new_flow});
             }
         }
     }
-    return visited[t];
+    return 0;
 }
-//Dado el grafo, donde n = nodos del grafo, s = source y t = sink
-int fordFulkerson(int s, int t){
-    for(int u = 1; u <= n; u++){
-        for(int v = 1; v <= n; v++) rGraph[u][v] = graph[u][v];
-    }
-    int max_flow = 0;
-    while(BFS(s, t)){
-        int path_flow = INT_MAX;
-        for(int v = t; v != s; v = parent[v]){
-            int u = parent[v];
-            path_flow = min(path_flow, rGraph[v][u]);
+
+int maxflow(int s, int t) {
+    int flow = 0;
+    vector<int> parent(n);
+    int new_flow;
+    while (new_flow = bfs(s, t, parent)) {
+        flow += new_flow;
+        int cur = t;
+        while (cur != s) {
+            int prev = parent[cur];
+            capacity[prev][cur]-=new_flow; //Flujo saliente de prev a cur
+            capacity[cur][prev]+=new_flow;  //Flujo entrante de cur desde prev
+            cur = prev;
         }
-        for(int v = t; v != s; v = parent[v]){
-            int u = parent[v];
-            rGraph[u][v]-=path_flow; //Flujo saliente
-            rGraph[v][j]+=path_flow; //Flujo entrante
-        }
-        max_flow+=path_flow;
     }
-    return max_flow;
+    return flow;
 }
