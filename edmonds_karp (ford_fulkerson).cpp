@@ -1,3 +1,4 @@
+//https://cp-algorithms.com/graph/edmonds_karp.html
 int n;
 vector<vector<int>> capacity;
 vector<vector<int>> adj;
@@ -23,6 +24,11 @@ int bfs(int s, int t, vector<int>& parent) {
     }
     return 0;
 }
+
+/*
+    Implementacion de Edmonds-Karp del algoritmo de Ford-Fulkerson para el maximo flujo
+    de un grafo, con complejidad: O(VE^2). s = source y t = sink
+*/
 
 int maxflow(int s, int t) {
     int flow = 0;
