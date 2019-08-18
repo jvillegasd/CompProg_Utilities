@@ -1,4 +1,4 @@
-void sieve(){ 
+void sieve(){ //O(nLog(Log(n)))
     memset(primesB, true, sizeof(primesB));
     for(int i = 2; i * i <= MAXN; i++){
         if(primesB[i]){
@@ -8,7 +8,7 @@ void sieve(){
     for(int i = 2; i <= MAXN; i++) if(primesB[i]) primes.pb(i);
 }
 
-void smallPF(){//O(nlog(n)*log(n))
+void smallPF(){ //O(log(n))
     spf[1] = 1;
     for(int i = 2; i < MAXN; i++) spf[i] = i;
     for(int i = 4; i < MAXN; i+=2) spf[i] = 2;
