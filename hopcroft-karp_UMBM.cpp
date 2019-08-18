@@ -1,6 +1,6 @@
 //http://zobayer.blogspot.com/2010/05/maximum-matching.html
 #define MAX 100001
-#define NIL 0
+#define NIL 0 //Supernodo source, tambien se usa para indicar 0
 #define INF (1<<28)
 
 vector<int> G[MAX];
