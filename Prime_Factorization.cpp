@@ -8,6 +8,17 @@ void sieve(){ //O(nLog(Log(n)))
     for(int i = 2; i <= MAXN; i++) if(primesB[i]) primes.pb(i);
 }
 
+void sieve(){
+    memset(prime, 1, sizeof(prime));
+    prime[0]=prime[1]=0;
+    for(int i = 2; i <= 100010; i++){
+        if(prime[i]){
+            primes.pb(i);
+            for(int j = 2*i; j <= 100010; j+=i) prime[j]=0;
+        }
+    }
+}
+
 void smallPF(){ //O(log(n))
     spf[1] = 1;
     for(int i = 2; i < MAXN; i++) spf[i] = i;
